@@ -1,7 +1,7 @@
-FROM gcr.io/oss-fuzz-base/base-builder-go:latest
+FROM gcr.io/oss-fuzz-base/base-builder-go:v1
 
 COPY . $SRC/continuous-fuzzing
 
-WORKDIR $SRC/continuous-fuzzing
+WORKDIR continuous-fuzzing
 
-COPY ./.clusterfuzzlite/build.sh $SRC/           
+COPY .clusterfuzzlite/build.sh $SRC/           

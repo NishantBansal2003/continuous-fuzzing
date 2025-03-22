@@ -11,7 +11,7 @@ func Fuzz(data []byte) int {
 	err := fuzzing.ParseString(v)
 
 	if err != nil {
-		return 1
+		panic(err)
 	}
 
 	return 0
