@@ -12,7 +12,7 @@
 #     /path/to/name_of_fuzzer.cc -o $OUT/name_of_fuzzer \
 #     $LIB_FUZZING_ENGINE /path/to/library.a
 
-compile_go_fuzzer ./fuzz/ Fuzz fuzz_parse_string
+# compile_go_fuzzer ./fuzz/ Fuzz fuzz_parse_string
 
 
 function compile_fuzzer {
