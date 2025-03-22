@@ -2,6 +2,8 @@ package fuzz
 
 import "fuzzing/fuzzing"
 
+
+//! Need to specify storage repo to fetch corpus as this is mutated
 func Fuzz(data []byte) int {
 	v := string(data)
 
