@@ -19,7 +19,7 @@ jobs:
       uses: google/clusterfuzzlite/actions/run_fuzzers@v1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        fuzz-seconds: 600
+        fuzz-seconds: 120
         mode: 'prune'
         output-sarif: true
         # Optional but recommended.
