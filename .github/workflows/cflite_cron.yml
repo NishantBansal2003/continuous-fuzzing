@@ -26,6 +26,8 @@ jobs:
           storage-repo: https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/NishantBansal2003/fuzzing-storage.git
           storage-repo-branch: main # Optional. Defaults to "main"
           storage-repo-branch-coverage: gh-pages # Optional. Defaults to "gh-pages".
+        env:
+          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
   Coverage:
     needs: Pruning
@@ -50,3 +52,6 @@ jobs:
           storage-repo: https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/NishantBansal2003/fuzzing-storage.git
           storage-repo-branch: main # Optional. Defaults to "main"
           storage-repo-branch-coverage: gh-pages # Optional. Defaults to "gh-pages".
+        env:
+          # Pass PAT as environment variable for API calls
+          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
