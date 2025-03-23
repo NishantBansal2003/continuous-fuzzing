@@ -23,7 +23,7 @@ jobs:
           output-sarif: true
           # Optional but recommended.
           # See later section on "Git repo for storage".
-          storage-repo: https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/NishantBansal2003/fuzzing-storage.git
+          storage-repo: https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/NishantBansal2003/fuzzing-storage.git
           storage-repo-branch: main # Optional. Defaults to "main"
           storage-repo-branch-coverage: gh-pages # Optional. Defaults to "gh-pages".
         env:
@@ -49,7 +49,7 @@ jobs:
           sanitizer: "coverage"
           # Optional but recommended.
           # See later section on "Git repo for storage".
-          storage-repo: https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/NishantBansal2003/fuzzing-storage.git
+          storage-repo: https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/NishantBansal2003/fuzzing-storage.git
           storage-repo-branch: main # Optional. Defaults to "main"
           storage-repo-branch-coverage: gh-pages # Optional. Defaults to "gh-pages".
         env:
