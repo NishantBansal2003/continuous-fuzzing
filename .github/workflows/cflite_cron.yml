@@ -28,6 +28,7 @@ jobs:
           storage-repo-branch-coverage: gh-pages # Optional. Defaults to "gh-pages".
 
   Coverage:
+    needs: Pruning
     runs-on: ubuntu-latest
     steps:
       - name: Build Fuzzers
