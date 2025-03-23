@@ -3,7 +3,7 @@
 To Run the Fuzz test use:
 
 ```sh
-go test -fuzz=FuzzParseString ./fuzzing -test.fuzzcachedir="../"
+go test -fuzz=FuzzParseString ./go-native-fuzzing -test.fuzzcachedir="../"
 ```
 
 ## Fuzzing using ClutserFuzzLite
