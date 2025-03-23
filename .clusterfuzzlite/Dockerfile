@@ -4,4 +4,4 @@ COPY . $SRC/continuous-fuzzing
 
 WORKDIR continuous-fuzzing
 
-COPY .clusterfuzzlite/build.sh $SRC/           
+COPY .clusterfuzzlite/build.sh $SRC/
