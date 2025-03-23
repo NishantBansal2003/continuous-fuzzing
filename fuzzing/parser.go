@@ -29,12 +29,12 @@ func ParseString(s string) error {
 	if len(parts) < 3 {
 		return errors.New("Invalid string")
 	}
-	// if isInt(parts[0]) {
-	_, err := strconv.Atoi(parts[0])
-	if err != nil {
-		return err
+	if isInt(parts[0]) {
+		_, err := strconv.Atoi(parts[0])
+		if err != nil {
+			return err
+		}
 	}
-	// }
 	parts[2] += ", Senegal"
 	return nil
 }
