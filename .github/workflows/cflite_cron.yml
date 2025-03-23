@@ -1,29 +1,29 @@
 name: ClusterFuzzLite cron tasks
-on:
-  push:
-    branches:
-      - main  # Use your actual default branch here.
 
-permissions: read-all
+on: workflow_dispatch
+
+permissions:
+  contents: write
+
 jobs:
   Pruning:
     runs-on: ubuntu-latest
     steps:
-    - name: Build Fuzzers
-      id: build
-      uses: google/clusterfuzzlite/actions/build_fuzzers@v1
-      with:
-        language: c++ # Change this to the language you are fuzzing
-    - name: Run Fuzzers
-      id: run
-      uses: google/clusterfuzzlite/actions/run_fuzzers@v1
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        fuzz-seconds: 120
-        mode: 'prune'
-        output-sarif: true
-        # Optional but recommended.
-        # See later section on "Git repo for storage".
-        storage-repo: https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/NishantBansal2003/fuzzing-storage.git
-        storage-repo-branch: main   # Optional. Defaults to "main"
-        storage-repo-branch-coverage: gh-pages  # Optional. Defaults to "gh-pages".
+      - name: Build Fuzzers
+        id: build
+        uses: google/clusterfuzzlite/actions/build_fuzzers@v1
+        with:
+          language: c++ # Change this to the language you are fuzzing
+      - name: Run Fuzzers
+        id: run
+        uses: google/clusterfuzzlite/actions/run_fuzzers@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          fuzz-seconds: 120
+          mode: "prune"
+          output-sarif: true
+          # Optional but recommended.
+          # See later section on "Git repo for storage".
+          storage-repo: https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/NishantBansal2003/fuzzing-storage.git
+          storage-repo-branch: main # Optional. Defaults to "main"
+          storage-repo-branch-coverage: gh-pages # Optional. Defaults to "gh-pages".

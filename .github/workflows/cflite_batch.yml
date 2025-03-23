@@ -4,7 +4,9 @@ on:
     branches:
       - main
 
-permissions: read-all
+permissions:
+  contents: write
+
 jobs:
   BatchFuzzing:
     runs-on: ubuntu-latest
