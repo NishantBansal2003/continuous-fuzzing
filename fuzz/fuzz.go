@@ -4,6 +4,8 @@ import "fuzzing/fuzzing"
 
 
 //! Need to specify storage repo to fetch corpus as this is mutated
+//! Looks like nothing is need to done, I ran the CI again and it fteches the 
+//! corpus from previous run.
 func Fuzz(data []byte) int {
 	v := string(data)
 
