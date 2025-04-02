@@ -1,6 +1,6 @@
 package fuzz
 
-import fuzzing "fuzzing/go-native-fuzzing"
+import fuzzing "fuzzing/fuzzing"
 
 // ! Need to specify storage repo to fetch corpus as this is mutated
 // ! Looks like nothing is need to done, I ran the CI again and it fteches the
