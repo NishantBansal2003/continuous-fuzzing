@@ -14,9 +14,9 @@ func Fuzz(data []byte) int {
 	err := fuzzing.ParseString(v)
 
 	if err != nil {
-		if err.Error() == "Invalid string" {
-			return 0
-		}
+		// if err.Error() == "Invalid string" {
+		// 	return 0
+		// }
 		panic(err)
 	}
 
