@@ -38,3 +38,22 @@ func ParseString(s string) error {
 	parts[2] += ", Senegal"
 	return nil
 }
+
+func ParseString2(s string) error {
+	parts := strings.Split(s, ",")
+
+	// This code I got to know from the fuzz-tests
+	// Now I need to update the fuzz tests else the fuzz tests won't run
+	// as expected.(This is not the job of continuous fuzzing, this is devs job)
+	if len(parts) < 2 {
+		return errors.New("Invalid string")
+	}
+	if isInt(parts[0]) {
+		_, err := strconv.Atoi(parts[0])
+		if err != nil {
+			return err
+		}
+	}
+	parts[1] += ", Senegal"
+	return nil
+}

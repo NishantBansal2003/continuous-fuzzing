@@ -23,7 +23,7 @@ func FuzzParseString(f *testing.F) {
 
 func FuzzStringParser(f *testing.F) {
 	f.Fuzz(func(t *testing.T, s string) {
-		err := ParseString(s)
+		err := ParseString2(s)
 		if err != nil {
 			// Added after the main code logic is changed
 			// if err.Error() == "Invalid string" {
