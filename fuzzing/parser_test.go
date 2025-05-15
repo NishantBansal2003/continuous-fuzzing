@@ -13,9 +13,9 @@ func FuzzParseString(f *testing.F) {
 		err := ParseString(s)
 		if err != nil {
 			// Added after the main code logic is changed
-			if err.Error() == "Invalid string" {
-				return
-			}
+			// if err.Error() == "Invalid string" {
+			// 	return
+			// }
 			t.Errorf("%v", err)
 		}
 	})
